@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NFT preview card component</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        height: 20px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="bg-main">
+    <main class="d-flex">
+      <div class="card bg-card">
+        <div class="card__img">
+          <img src="./images/image-equilibrium.jpg" alt="glass cube" />
+        </div>
+        <div class="card__content">
+          <h2 class="card__title text-neutral-100 fw-semi">
+            Equilibrium #3429
+          </h2>
+          <p class="card__description text-primary fw-light">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <div class="card__price d-flex">
+            <div class="price text-accent d-flex">
+              <img
+                class="ethereum-icon"
+                src="./images/icon-ethereum.svg"
+                alt="ethereum"
+              />
+              <p class="fw-semi">0.041 ETH</p>
+            </div>
+            <div class="time-left text-primary d-flex">
+              <img
+                class="clock-icon"
+                src="./images/icon-clock.svg"
+                alt="clock"
+              />
+              <p class="fw-light">3 days left</p>
+            </div>
+          </div>
+        </div>
+        <div class="card__footer creator d-flex">
+          <img
+            class="creator-avatar"
+            src="./images/image-avatar.png"
+            alt="avatar"
+          />
+          <p class="text-primary fw-light">
+            Creation of
+            <a class="creator-name text-neutral-100" href="#">Jules Wyvern</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution text-primary">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/tomatikrad" target="_blank">tomatikrad</a>.
+    </div>
+  </body>
+</html>

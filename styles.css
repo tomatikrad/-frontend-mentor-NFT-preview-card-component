@@ -1,0 +1,223 @@
+:root {
+  --clr-primary: hsl(215 51% 70%);
+
+  --clr-accent: hsl(178 100% 50%);
+
+  --clr-neutral-100: hsl(0 0% 100%);
+  --clr-neutral-500: hsl(215 32% 27%);
+  --clr-neutral-600: hsl(216 50% 16%);
+  --clr-neutral-700: hsl(217 54% 11%);
+
+  --clr-line: var(--clr-neutral-500);
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("./fonts/Outfit-Light.woff2") format("woff2"),
+    url("./fonts/Outfit-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("./fonts/Outfit-Regular.woff2") format("woff2"),
+    url("./fonts/Outfit-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("./fonts/Outfit-SemiBold.woff2") format("woff2"),
+    url("./fonts/Outfit-SemiBold.woff") format("woff");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #region Utility classes */
+.text-primary {
+  color: var(--clr-primary);
+}
+.text-accent {
+  color: var(--clr-accent);
+}
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.bg-card {
+  background-color: var(--clr-neutral-600);
+}
+.bg-main {
+  background-color: var(--clr-neutral-700);
+}
+
+.fw-light {
+  font-weight: 300;
+}
+.fw-semi {
+  font-weight: 600;
+}
+
+.d-flex {
+  display: flex;
+}
+/* #endregion */
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+}
+
+main {
+  height: calc(100% - 20px);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.card {
+  width: 327px;
+  height: 545px;
+  padding: 1.5em;
+  border-radius: 1rem;
+}
+.card__img {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.card__img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsl(178 100% 50% / 0.4);
+  background-image: url(./images/icon-view.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+.card__img:hover::after {
+  opacity: 1;
+}
+.card__title {
+  cursor: pointer;
+  width: max-content;
+  font-size: 1.4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+.card__title:hover {
+  color: var(--clr-accent);
+}
+
+.card__description {
+  margin-bottom: 1rem;
+}
+
+.card__price {
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.ethereum-icon {
+  width: 0.7rem;
+  height: 1.1rem;
+  margin-right: 0.4rem;
+}
+.clock-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.3rem;
+  margin-bottom: 3px;
+}
+.price *,
+.time-left * {
+  flex-shrink: 0;
+}
+.time-left {
+  align-items: center;
+}
+
+.card__footer {
+  align-items: center;
+  font-size: 0.96rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--clr-line);
+}
+.creator-avatar {
+  width: 2em;
+  margin-right: 1.1rem;
+  border: 1px solid var(--clr-neutral-100);
+  border-radius: 50%;
+}
+.creator-name {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.creator-name:hover {
+  color: var(--clr-accent);
+}
